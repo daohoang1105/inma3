@@ -35,11 +35,11 @@ class AllSparePart(models.Model):
 
     class CSCEHWMO(models.TextChoices):   
         central = 'Central inverter'
-        string = 'string inverter'
+        string = 'String inverter'
         commu = 'Comunication device'
         ess = 'ESS'
-        hybrid = 'Hybird  inverter'
-        wind = ' wind Converter'
+        hybrid = 'Hybird inverter'
+        wind = 'Wind Converter'
         mv = 'MV device'
         other = 'Other'
     
@@ -54,7 +54,7 @@ class AllSparePart(models.Model):
     partCode = models.CharField(max_length=10, null=True, blank=True)
     goodStatus = models.CharField(max_length=5, choices=Status.choices, default=None)
     sparePartType = models.CharField(max_length=7, choices=SpareType.choices, default=None)
-    csceHWMO = models.CharField(max_length=20, choices=CSCEHWMO.choices,default=CSCEHWMO.other)
+    csceHWMO = models.CharField(max_length=20, choices=CSCEHWMO.choices,default=None)
     serialNumber = models.CharField(max_length=20, null=True, blank=True, default=None)
     productDescription = models.CharField(max_length=100, null=True, blank=True)
     deliverDate = models.DateField(max_length=10, null=True, blank=True)
